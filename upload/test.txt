@@ -1,0 +1,2 @@
+SELECT * FROM `ip_log` WHERE `ip_create_time` BETWEEN '2022-08-12' AND '2022-08-15'  
+ORDER BY `ip_log`.`ocean_export_id`  DESC
