@@ -7,9 +7,9 @@
  * @return mysqli
  */
 function getSQLLink() {
-    $db = mysqli_connect("127.0.0.1", "qa_trans", "qat-1968");
+    $db = mysqli_connect("127.0.0.1", "root", "123456");
     if (!$db) die("Error: 無法連接MySQL伺服器!" . mysqli_connect_error());
-    mysqli_select_db($db, "qat_logistics") or
+    mysqli_select_db($db, "ocean_website") or
         die("Error: 無法選擇資料庫!" . mysqli_error($db));
     mysqli_query($db, "SET NAMES utf8");
     return $db;
