@@ -29,19 +29,19 @@ if($data_array['trading']=="export"){
 <html lang="en">
   <head>
 <?php 
-  echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true,true);
+  echo TESTransportStaffCommonHtmlHead("測試海運網後台",true,true);
 ?>
     <script src="../../js/BookingOrder.js"></script>
    </head>
   <body class="text-center">
 
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(false,false,1);
-  echo QATransportStaffHeader(true);
-  echo PopupCloseWidowHref("洋宏海運網","確認是否要刪除此檔案?","確認","取消","",false,1);
+  echo TESTransportStaffHeader(true);
+  echo PopupCloseWidowHref("測試海運網","確認是否要刪除此檔案?","確認","取消","",false,1);
 ?> 
   <form method="post" action="" id="loginForm" enctype="multipart/form-data">
     <input type="text" name="trading" value="<?php echo $data_array['trading'];?>" hidden>
@@ -61,14 +61,14 @@ if($data_array['trading']=="export"){
   </div>
   </form>
 
-  <?php echo QATransportStaffFooter();?>
+  <?php echo TESTransportStaffFooter();?>
 </body>
 </html>
 
 <?php
 if(isset($_POST['emp_booking'])){
   list($account,$auth)=getAccountAuth();
-  $emailname="[聯絡訊息]洋宏海運網";
+  $emailname="[聯絡訊息]測試海運網";
   if($state=="update"){
     $title="修改".$text."單";
   }
@@ -89,7 +89,7 @@ if(isset($_POST['emp_booking'])){
   //     $booking_order_array=getBookingOrderId($id);
   //     $serial=$booking_order_array["serial_head"].$booking_order_array["serial_number"];
   //     if($booking_order_array['schedule']==2){
-  //       $subject="測試中-【QAT洋宏物聯網】訂單狀態：訂單修改";
+  //       $subject="測試中-【TEST測試物聯網】訂單狀態：訂單修改";
   //       $msg=getSendMailBookingOrderUpdateMsg(2,$booking_order_array);
   //       $attach_array=getBookingOrderSendMailAttachArray($serial,$booking_order_array['attachments']);
   //       $recipients=getSendMailRecipientsArray($booking_order_array['contact_name'],$booking_order_array['contact_email']);

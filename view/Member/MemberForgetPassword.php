@@ -22,7 +22,7 @@ if(isset($_POST['username'])){
 <!doctype html>
 <html lang="en">
   <head>
-    <?php echo QATransportCommonHtmlHead("洋宏海運網忘記密碼");?>
+    <?php echo TESTransportCommonHtmlHead("測試海運網忘記密碼");?>
     <link href="../../css/signin.css" rel="stylesheet">
   <script type="text/javascript" language="javascript">
   $(document).ready(function(){
@@ -55,9 +55,9 @@ if(isset($_POST['username'])){
    </head>
   <body class="text-center">
 <?php
-echo QATransportCommonHtmlBody();
+echo TESTransportCommonHtmlBody();
 echo PopupWidowScriptHiddenButton(1);
-list($result,$html)=QATransportHeader(true,true);
+list($result,$html)=TESTransportHeader(true,true);
   echo $html;
   if(!$result){exit;}
 ?> 
@@ -128,7 +128,7 @@ list($result,$html)=QATransportHeader(true,true);
       </div>
     </div>
 <div class="footer">
-  <?php echo QATransportFooter();?>
+  <?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>
@@ -136,23 +136,23 @@ list($result,$html)=QATransportHeader(true,true);
 <?php
 /*
     if(strtotime("+5 minute",strtotime($member_log['create_time']))>=strtotime("now")){
-      echo PopupWidowHref("洋宏海運網","會員驗證碼時效已超過5分鐘，請在操作一次取得新的驗證碼。","./MemberForgetPassword.php",true,1);    
+      echo PopupWidowHref("測試海運網","會員驗證碼時效已超過5分鐘，請在操作一次取得新的驗證碼。","./MemberForgetPassword.php",true,1);    
     }elseif($member_log['frequency']>5){
-      echo PopupWidowHref("洋宏海運網","會員驗證次數已超過5次，請在操作一次取得新的驗證碼。","./MemberForgetPassword.php",true,1);
+      echo PopupWidowHref("測試海運網","會員驗證次數已超過5次，請在操作一次取得新的驗證碼。","./MemberForgetPassword.php",true,1);
     }elseif (password_verify($verification_code, $member_log['verification_code'])){
-      echo PopupWidowHref("洋宏海運網","會員驗證碼正確，請重新輸入密碼",false,true,1);
+      echo PopupWidowHref("測試海運網","會員驗證碼正確，請重新輸入密碼",false,true,1);
     }else{
       if(sqlUpdateMemberLogFrequency($member_log['id'],($member_log['frequency']+1))){
-        echo PopupWidowHref("洋宏海運網","會員驗證碼錯誤",false,true,1);
+        echo PopupWidowHref("測試海運網","會員驗證碼錯誤",false,true,1);
       }
     }
 */
-$title="洋宏海運網";
+$title="測試海運網";
 if(isset($_POST['password']) && $pass==1){
   echo $password=$_POST['password'];
   $confirm_password=$_POST['confirm_password'];
   if(strtotime("+30 minute",strtotime($member_log['create_time']))<=strtotime("now")){
-    echo PopupWidowHref("洋宏海運網","會員修改密碼時效已超過30分鐘，請在操作一次。","./MemberForgetPassword.php",true,1);
+    echo PopupWidowHref("測試海運網","會員修改密碼時效已超過30分鐘，請在操作一次。","./MemberForgetPassword.php",true,1);
   }
   if (!PasswordFormat($password)){
     echo PopupWidowHref($title,"會員密碼格式錯誤，請再重新輸入",false,true,false);
@@ -164,24 +164,24 @@ if(isset($_POST['password']) && $pass==1){
   }
   $password = password_hash($password, PASSWORD_DEFAULT);
   if(sqlUpdateMemberIdPassword($row['member_id'],$password)){
-    echo PopupWidowHref("洋宏海運網","會員密碼修改成功","./MemberLogin.php",true,1);
+    echo PopupWidowHref("測試海運網","會員密碼修改成功","./MemberLogin.php",true,1);
   }else{
-    echo PopupWidowHref("洋宏海運網","會員密碼修改失敗，請聯絡公司相關IT人員",false,true,1);
+    echo PopupWidowHref("測試海運網","會員密碼修改失敗，請聯絡公司相關IT人員",false,true,1);
   }
 }elseif(isset($_POST['verification_code']) && $pass==0){
   $verification_code=$_POST['verification_code'];
   if($member_log){
     if(strtotime("+10 minute",strtotime($member_log['create_time']))<=strtotime("now")){
-      echo PopupWidowHref("洋宏海運網","會員驗證碼時效已超過10分鐘，請在操作一次取得新的驗證碼。","./MemberForgetPassword.php",true,1);    
+      echo PopupWidowHref("測試海運網","會員驗證碼時效已超過10分鐘，請在操作一次取得新的驗證碼。","./MemberForgetPassword.php",true,1);    
     }elseif($member_log['frequency']>=5){
-      echo PopupWidowHref("洋宏海運網","會員驗證次數已超過5次，請在操作一次取得新的驗證碼。","./MemberForgetPassword.php",true,1);
+      echo PopupWidowHref("測試海運網","會員驗證次數已超過5次，請在操作一次取得新的驗證碼。","./MemberForgetPassword.php",true,1);
     }elseif (password_verify($verification_code, $member_log['verification_code'])){
       if(sqlUpdateMemberLogPass($member_log['member_log_id'],1)){
-        echo PopupWidowHref("洋宏海運網","會員驗證碼正確，請輸入新密碼","reload",true,1);
+        echo PopupWidowHref("測試海運網","會員驗證碼正確，請輸入新密碼","reload",true,1);
       }
     }else{
       if(sqlUpdateMemberLogFrequency($member_log['member_log_id'],($member_log['frequency']+1))){
-        echo PopupWidowHref("洋宏海運網","會員驗證碼錯誤".($member_log['frequency']+1)."次",false,true,1);
+        echo PopupWidowHref("測試海運網","會員驗證碼錯誤".($member_log['frequency']+1)."次",false,true,1);
       }
     }
   }
@@ -191,20 +191,20 @@ if(isset($_POST['password']) && $pass==1){
     $new_verification_code=password_hash($verification_code, PASSWORD_DEFAULT);
     if(sqlInsertMemberLog($row['member_id'],$new_verification_code)){
       list($account,$auth)=getAccountAuth();
-      $emailname="[系統自動寄送]洋宏海運網";
-      $subject="測試中-洋宏海運網會員忘記密碼";
+      $emailname="[系統自動寄送]測試海運網";
+      $subject="測試中-測試海運網會員忘記密碼";
       $recipients=array(array("email"=>$row['username'],"name"=>$row['contact_name']));
       $msg="<span style='font-family:Microsoft JhengHei;'>您的驗證碼是:".$verification_code."，此驗證碼為10分鐘效力，若超過時間則須再操作一次。</span>";
       if(sendMailLetter($account,$auth,$account,$emailname,$subject,$msg,false,false,$recipients,false)){
-        echo PopupWidowHref("洋宏海運網","會員驗證碼已寄送",false,true,1);
+        echo PopupWidowHref("測試海運網","會員驗證碼已寄送",false,true,1);
       }else{
-        echo PopupWidowHref("洋宏海運網","會員驗證碼寄送失敗，請聯絡公司相關IT人員","./MemberForgetPassword.php",true,1);      
+        echo PopupWidowHref("測試海運網","會員驗證碼寄送失敗，請聯絡公司相關IT人員","./MemberForgetPassword.php",true,1);      
       }
     }else{
-      echo PopupWidowHref("洋宏海運網","會員驗證失敗，請聯絡公司相關IT人員","./MemberForgetPassword.php",true,1);      
+      echo PopupWidowHref("測試海運網","會員驗證失敗，請聯絡公司相關IT人員","./MemberForgetPassword.php",true,1);      
     }
   }else{
-    echo PopupWidowHref("洋宏海運網","無此會員帳號","./MemberForgetPassword.php",true,1);
+    echo PopupWidowHref("測試海運網","無此會員帳號","./MemberForgetPassword.php",true,1);
   }
 }
 ?>

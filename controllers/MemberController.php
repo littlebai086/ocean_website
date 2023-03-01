@@ -239,7 +239,7 @@ function getMemberDecide($state,$data_array,$member_log){
     return array(false,"聯絡人電話應為數字10碼");
   }
   if (!LocalTelePhoneFormat($data_array['contact_company_phone'])){
-    return array(false,"公司電話格式應類似為(02)6602-8989");
+    return array(false,"公司電話格式應類似為(02)1234-5678");
   }
   if (!LocalTelePhoneFormat($data_array['contact_company_fax']) && $data_array['contact_company_fax']){
     return array(false,"公司傳真格式應類似為(02)2715-0606");

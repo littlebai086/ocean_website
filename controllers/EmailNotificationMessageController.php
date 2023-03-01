@@ -86,8 +86,8 @@ function getStaffMemberEmailNotificationMessageListSearchTable($start,$per){
 function getStaffMemberSendMailNotificaionMessageForm($id,$state){
   $attachment_html="<div class='row'>";
   if($state=="send_add"){
-    $subject="洋宏海運網";
-    $message=getEnterSymbolChangeTextarea("Attn.: 洋宏海運網的會員<br><br>您好<br><br><br><br>謝謝。<br><br><a href='https://qat.com.tw/'>洋宏海運網</a>");
+    $subject="測試海運網";
+    $message=getEnterSymbolChangeTextarea("Attn.: 測試海運網的會員<br><br>您好<br><br><br><br>謝謝。<br><br><a href='https://TEST.com.tw/'>測試海運網</a>");
     $readonly="";
     $submit="寄送";
     for($i=0;$i<3;$i++){

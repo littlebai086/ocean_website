@@ -54,7 +54,7 @@ A.brand {
 	<TR><TD class=tiny><TABLE width=320 height=100% cellSpacing=0 style='BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid'>
 	  <TBODY>
 	  <TR bgcolor=#ffffff><TD width=100% class=tiny height=1><TABLE border=0 cellspacing=0 cellpadding=1 width=100%>
-		<TR><TD class=logotext style='padding-left: 5px'><IMG SRC='http://isotank.qatransport.com/csop/oe.jpg' border=0 ></TD><TD align=right class=noro style='padding-right: 5px; FONT-SIZE: 7pt'>WE DO THE BEST</TD></TR>
+		<TR><TD class=logotext style='padding-left: 5px'><IMG SRC='http://isotank.TESTransport.com/csop/oe.jpg' border=0 ></TD><TD align=right class=noro style='padding-right: 5px; FONT-SIZE: 7pt'>WE DO THE BEST</TD></TR>
 	  </TABLE></TD><TD class=tiny></TD></TR>
 	  <TR><TD colspan=2><TABLE width=100% height=100% cellSpacing=2 border=0 align='right'>
 		<TR height=1 style='padding-bottom: 4px'><TD class=noro valign=top style='padding-left: 4px'>
@@ -70,7 +70,7 @@ A.brand {
 fax: <BR>
 Skype ID:</TD><TD class=noro align=right style='padding-left: 4px' nowrap>886 2 6602 8989<BR>
 886 2715 0606<BR>
-".$row['attn2']."-qat
+".$row['attn2']."-TEST
 </TD></TR></TABLE>
 		</TD></TR>
 	  </TABLE></TD></TR>

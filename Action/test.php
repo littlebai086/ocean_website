@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>洋宏物流網登入</title>
+    <title>測試物流網登入</title>
    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/"> 
     <!-- Bootstrap core CSS -->
 </head>

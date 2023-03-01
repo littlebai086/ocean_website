@@ -10,7 +10,7 @@ session_start();
 $form="";
 list($result,$message)=getStaffPagePriorityReturn(7);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
   echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
@@ -28,12 +28,12 @@ foreach ($fields as $field){
 <html>
 <head>
   <?php 
-    echo QATransportStaffCommonHtmlHead("測試海運網後台",true);
+    echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
   ?>
 </head>
 <body>
 <?php 
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(false,"StaffMemberRecordLogMessage");
@@ -102,6 +102,6 @@ foreach ($fields as $field){
 </table>
 
 </div>
-<?php echo QATransportStaffFooter();?>
+<?php echo TESTransportStaffFooter();?>
 </body>
 </html>

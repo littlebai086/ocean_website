@@ -8,8 +8,8 @@ require_once("../../controllers/CommonSqlController.php");
 require_once("../../controllers/CFSOceanPriceController.php");
 list($result,$message)=getStaffPagePriorityReturn(5);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
 $table=getStaffMemberCFSOceanExportListSearchTable();
@@ -18,12 +18,12 @@ $table=getStaffMemberCFSOceanExportListSearchTable();
 <html lang="en">
   <head>
     <?php 
-      echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true);
+      echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
     ?>
    </head>
   <body>
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(false);
@@ -43,6 +43,6 @@ $table=getStaffMemberCFSOceanExportListSearchTable();
   echo $table;
   ?>
 </table>
-<?php echo QATransportStaffFooter();?>
+<?php echo TESTransportStaffFooter();?>
 </body>
 </html>

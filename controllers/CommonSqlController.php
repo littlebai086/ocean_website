@@ -519,7 +519,7 @@ function getOceanExportPriceCommonValuation($price){
  * @return array
  */
 function getEmailAddressArray(){
-    return array("@qatransport.com","@qacontainer.com");
+    return array("@test.com","@test2.com");
 }
 /**
  * 1.陣列為產品性質
@@ -570,7 +570,7 @@ function getCabinetVolumeArray(){
  * @return array
  */
 function getBookingOrderSerialHeadArray(){
-    $array=array("QAT-F","QAT-L");
+    $array=array("TEST-F","TEST-L");
     return $array;
 }
 /**
@@ -582,7 +582,7 @@ function getBookingOrderSerialHeadArray(){
  * 
  * @return string
  */
-function getQATCompanySendShowName($staff_array){
+function getTESTCompanySendShowName($staff_array){
     return $staff_array["extension"]." ".ucfirst(strtolower($staff_array["ename"]))." ".ucfirst(strtolower($staff_array["elastname"]))." / QA Transport";
 }
 /**
@@ -634,18 +634,18 @@ function getBookingOrderSerialHeadSelect($value){
  *
  * @author Peter Chang
  * 
- * @param boolean|string $head 訂艙編號的開頭為何目前都只有QAT
+ * @param boolean|string $head 訂艙編號的開頭為何目前都只有TEST
  * 
  * @return array(string,string)
  */
 function getSerialNumber($shipment_type,$head=false){
     if($shipment_type=="CY"){
-        $head="QAT-F";
+        $head="TEST-F";
     }elseif($shipment_type=="CFS"){
-        $head="QAT-L";
+        $head="TEST-L";
     }
     // if(!$head){
-    //     $head="QAT";
+    //     $head="TEST";
     // }
     $buf=sqlSelectBookingOrderCountSerial($head,date("Ym"));
     if($buf){
@@ -2629,12 +2629,12 @@ function getSendMailOrderStatusMsg($data_array,$state){
     if($state=="cut_off_date"){
          $msg="
         您的訂艙編號".$serial_number."，更改結關日通知。<br>
-        如有任何疑問請洽詢(02) 6602-8989<br><br>
+        如有任何疑問請洽詢(02) 1234-5678<br><br>
         謝謝<br>";  
     }elseif($state=="onboard_date"){
         $msg="
         您的訂艙編號".$serial_number."，更改開航日通知。<br>
-        如有任何疑問請洽詢(02) 6602-8989<br><br>
+        如有任何疑問請洽詢(02) 1234-5678<br><br>
         謝謝<br>"; 
     }elseif($schedule==1){
         $contact_msg="";
@@ -2647,7 +2647,7 @@ function getSendMailOrderStatusMsg($data_array,$state){
         $staff_array=getStaffListId($data_array['cs_staff_id']);
         $msg="
         您的訂艙編號".$serial_number."，已經由本公司的客服部人員 ".$staff_array['ename']." 分機#".$staff_array['extension']." 負責處理。<br>
-        如有任何疑問請洽詢(02) 6602-8989<br><br>
+        如有任何疑問請洽詢(02) 1234-5678<br><br>
         謝謝<br>"; 
         if($state=="provide_so_pending"){
             $contact_msg="Dear 測試文件部<br><br>您好，<br><br>";
@@ -2657,14 +2657,14 @@ function getSendMailOrderStatusMsg($data_array,$state){
         }elseif($state=="provide_so_date"){
            $msg="
         您的訂艙編號".$serial_number."，已經由本公司的客服部人員 ".$staff_array['ename']." 分機#".$staff_array['extension']." 提供S/O，請參閱附件檔案。<br>
-        如有任何疑問請洽詢(02) 6602-8989<br><br>
+        如有任何疑問請洽詢(02) 1234-5678<br><br>
         謝謝<br>";  
         }
     }elseif($schedule==3){
         $staff_array=getStaffListId($data_array['doc_staff_id']);
         $msg="
         您的訂艙編號".$serial_number."，已經提供S/O，後續作業由本公司的文件部人員".$staff_array['ename']." 分機#".$staff_array['extension']." 負責處理。<br>
-        如有任何疑問請洽詢(02) 6602-8989<br><br>
+        如有任何疑問請洽詢(02) 1234-5678<br><br>
         謝謝<br>"; 
         if($state=="document_check_pending"){
             $contact_msg="Dear 測試財務部<br><br>您好，<br><br>";
@@ -2674,19 +2674,19 @@ function getSendMailOrderStatusMsg($data_array,$state){
         }elseif($state=="document_check_date"){
         $msg="
         您的訂艙編號".$serial_number."，已經由本公司的文件部人員 ".$staff_array['ename']." 分機#".$staff_array['extension']." 提供提單及帳單，請參閱附件檔案。<br>
-        如有任何疑問請洽詢(02) 6602-8989<br><br>
+        如有任何疑問請洽詢(02) 1234-5678<br><br>
         謝謝<br>"; 
         }
     }elseif($schedule==4){
         $staff_array=getStaffListId($data_array['financial_staff_id']);
         $msg="
         您的訂艙編號".$serial_number."，已經完成文件核對，後續作業由本公司的財務部人員".$staff_array['ename']." 分機#".$staff_array['extension']." 負責處理。<br>
-        如有任何疑問請洽詢(02) 6602-8989<br><br>
+        如有任何疑問請洽詢(02) 1234-5678<br><br>
         謝謝<br>"; 
         if($state=="collection_date"){
         $msg="
         您的訂艙編號".$serial_number."，已經由本公司的財務部人員 ".$staff_array['ename']." 分機#".$staff_array['extension']."收到款項。<br>
-        如有任何疑問請洽詢(02) 6602-8989<br><br>
+        如有任何疑問請洽詢(02) 1234-5678<br><br>
         謝謝<br>"; 
         }
     }
@@ -2721,13 +2721,13 @@ function getSendMailMemberPassMsg($pass,$pass_message){
         親愛的客戶<br><br>
         您好<br><br>
         ".$pass_message."<br>
-        歡迎您使用<a href='".getURLLink()."view/index.php'>QAT測試海運網</a>。<br><br>
-        如有任何疑問，請聯絡 cs@qatransport.com。<br><br>QAT測試海運網"; 
+        歡迎您使用<a href='".getURLLink()."view/index.php'>TEST測試海運網</a>。<br><br>
+        如有任何疑問，請聯絡 cs@test.com。<br><br>TEST測試海運網"; 
     }elseif($pass==2){
         $result.="
         親愛的客戶<br><br>
         您好<br><br>
-        您的會員註冊審核沒有通過。<br>".$pass_message."<br><br>QAT測試海運網"; 
+        您的會員註冊審核沒有通過。<br>".$pass_message."<br><br>TEST測試海運網"; 
     }
     $result.="</span></body></html>";
     return $result;

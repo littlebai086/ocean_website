@@ -14,8 +14,8 @@ $form="";
 if (isset($_GET['state'])){$state=$_GET['state'];}else{$state=false;}
 list($result,$message)=getStaffPagePriorityReturn(5);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
 if($state=="shipping_company_fees_upload"){
@@ -28,12 +28,12 @@ if($state=="shipping_company_fees_upload"){
 <html>
 <head>
   <?php 
-    echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true);
+    echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
   ?>
 </head>
 <body>
 <?php 
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
 	echo PopupWidowScriptHiddenButton(false,"Message");
@@ -60,7 +60,7 @@ if($state=="shipping_company_fees_upload"){
      </div>
   </form>
 </main>
-<?php echo QATransportStaffFooter();?>
+<?php echo TESTransportStaffFooter();?>
 </body>
 </html>
 <?php 

@@ -141,14 +141,14 @@ function sqlInsertMemberLoginLog($member_id){
 function sqlSelectEmailAddressBookEmail($email){
     $buf="";
     $emails=explode(";",$email);
-    $qat_address="@qatransport.com";
+    $TEST_address="@test.com";
     foreach($emails as $email){
         if($email=="test"){
             $buf.="`email` = 'peter777200067@gmail.com' OR ";
         }elseif($email=="test_cc"){
-            $buf.="`email` = 'dafunshelly0216@gmail.com' OR ";
+            $buf.="`email` = 'peter777200067@gmail.com' OR ";
         }else{
-            $buf.="`email` = '".$email.$qat_address."' OR ";
+            $buf.="`email` = '".$email.$TEST_address."' OR ";
         }
     }
     $buf=rtrim($buf,"OR ");

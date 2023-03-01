@@ -22,7 +22,7 @@ if($trading=="export"){
 <!doctype html>
 <html lang="en">
   <head>
-    <?php echo QATransportCommonHtmlHead("洋宏海運網訂艙");?>
+    <?php echo TESTransportCommonHtmlHead("測試海運網訂艙");?>
     <script src="../../js/BookingOrder.js"></script>
     <script language="javascript">
     window.onload=function(){
@@ -66,11 +66,11 @@ $(document).ready(function(){
    </head>
   <body class="text-center">
 <?php
-  echo QATransportCommonHtmlBody();
+  echo TESTransportCommonHtmlBody();
   echo PopupWidowScriptHiddenButton(false,21,"DeleteFileMessage");
   echo PopupWidowScriptHiddenButton(false,"ErrorMessage");
-  echo PopupCloseWidowHref("洋宏海運網","確認是否要刪除此檔案?","確認","取消","",false,"DeleteFileMessage");
-  list($result,$html)=QATransportHeader(true,false);
+  echo PopupCloseWidowHref("測試海運網","確認是否要刪除此檔案?","確認","取消","",false,"DeleteFileMessage");
+  list($result,$html)=TESTransportHeader(true,false);
   echo $html;
   if(!$result){exit;}
   $member_array=getMemberUsername($_SESSION['username']);
@@ -131,7 +131,7 @@ $(document).ready(function(){
   </div>
   </form>
 <div class="footer">
-  <?php echo QATransportFooter();?>
+  <?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>
@@ -142,7 +142,7 @@ if($member_array['pass']==0){
 }
 if(isset($_POST['emp_booking'])){
   list($account,$auth)=getAccountAuth();
-  $emailname="洋宏海運網";
+  $emailname="測試海運網";
   if ($state=="add"){
     $title="新增".$text."單";
   }elseif($state=="update"){

@@ -773,7 +773,7 @@ INSERT INTO `country` (`country_id`, `ocean_export_id`, `country_english`, `coun
 (23, 13, 'IRAQ', '伊拉克', '', 0),
 (24, 13, 'KUWAIT', '科威特', '', 0),
 (25, 13, 'OMAN', '阿曼', '', 0),
-(26, 13, 'QATAR', '卡達', '', 0),
+(26, 13, 'TESTAR', '卡達', '', 0),
 (27, 13, 'SAUDI ARABIA', '沙烏地阿拉伯', '', 0),
 (28, 10, 'INDIA', '印度', '', 0),
 (29, 10, 'BANGLADESH', '孟加拉', '', 0),
@@ -2088,7 +2088,7 @@ CREATE TABLE `staff_list` (
 --
 
 INSERT INTO `staff_list` (`staff_id`, `cname`, `ename`, `elastname`, `gender`, `email`, `extension`, `position_id`, `birthday`, `staff_state_id`, `create_time`) VALUES
-(1, '章汶霖', 'Peter', 'Chang', 'male', 'peter@qatransport.com', 127, 4, '1997-07-04', 1, '2022-04-20 06:11:22');
+(1, '章汶霖', 'Peter', 'Chang', 'male', 'peter@test.com', 127, 4, '1997-07-04', 1, '2022-04-20 06:11:22');
 
 -- --------------------------------------------------------
 

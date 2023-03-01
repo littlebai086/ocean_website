@@ -9,7 +9,7 @@ if(isset($_SESSION['member_id'])){$member_id=$_SESSION['member_id'];}else{$membe
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-	<?php echo QATransportCommonHtmlHead("洋宏海運網");?>
+	<?php echo TESTransportCommonHtmlHead("測試海運網");?>
   <script language="javascript">
     function Record(ocean_export_id){
     $.ajax({
@@ -44,7 +44,7 @@ if(isset($_SESSION['member_id'])){$member_id=$_SESSION['member_id'];}else{$membe
 <body>
 
 	<?php 
-  	list($result,$html)=QATransportHeader(true,true);
+  	list($result,$html)=TESTransportHeader(true,true);
   	echo $html;
   	if(!$result){exit;}
   	$ocean_quote_buf=sqlSelectOceanExportOrderByQuoteRoute();
@@ -106,7 +106,7 @@ if(isset($_SESSION['member_id'])){$member_id=$_SESSION['member_id'];}else{$membe
     </div>
     
 <div class="footer">
-	<?php echo QATransportFooter();?>
+	<?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>

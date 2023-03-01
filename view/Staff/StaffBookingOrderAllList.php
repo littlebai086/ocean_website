@@ -10,7 +10,7 @@ require_once("../../controllers/MemberController.php");
 require_once("../../controllers/BookingController.php");
 list($result,$message)=getStaffPagePriorityReturn(6);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
   echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
@@ -34,12 +34,12 @@ list($page_text,$page,$start,$per)=getListPageText($page,$page_total);
 <html lang="en">
   <head>
 <?php 
-  echo QATransportStaffCommonHtmlHead("測試海運網後台",true);
+  echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
 ?>
   </head>
 <body>
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo getBookingOrderCommonListPopupButtonWidowHref();
@@ -156,6 +156,6 @@ list($page_text,$page,$start,$per)=getListPageText($page,$page_total);
 <?php 
   echo $page_text;
 ?>
-<?php echo QATransportStaffFooter();?>
+<?php echo TESTransportStaffFooter();?>
 </body>
 </html>

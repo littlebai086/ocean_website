@@ -14,7 +14,7 @@ if(isset($_GET['id'])){$staff_id=$_GET['id'];}else{$staff_id=false;}
 if(isset($_GET['pass'])){$pass=$_GET['pass'];}else{$pass=false;}
 list($result,$message)=getStaffStatePriorityReturn($state,2,$staff_id,false);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
   echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
@@ -53,7 +53,7 @@ if(isset($_POST['emp_edit_send'])){
 <html lang="en">
   <head>
   <?php 
-    echo QATransportStaffCommonHtmlHead("測試海運網後台",true);
+    echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
   ?>
 <script src="../../js/MemberRegisterInformation.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script>
@@ -126,7 +126,7 @@ function SelectPassChangTextareaMessage(){
     $("#TextareaPassMessage").val("您所輸入的公司統一編號，本公司無法查到此統一編號有辦理商工登記，所以沒有通過您的會員註冊申請。");
      $("#TextareaPassMessage").attr('readonly','readonly');
   }else if($("#inputGroupSelectPass").val()==2){
-    $("#TextareaPassMessage").val("QAT 測試海運網尚未開放給同行使用，所以沒有通過您的會員註冊申請。");
+    $("#TextareaPassMessage").val("TEST 測試海運網尚未開放給同行使用，所以沒有通過您的會員註冊申請。");
     $("#TextareaPassMessage").attr('readonly','readonly');
   }else if($("#inputGroupSelectPass").val()==3){
     $("#TextareaPassMessage").val("");
@@ -147,7 +147,7 @@ function ButtonUpdatePassFrom(){
 </head>
   <body>
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(false,"StaffAuditMemberMessageResult");
@@ -214,7 +214,7 @@ function ButtonUpdatePassFrom(){
       </div>
     </div>
   </div>
-  <?php echo QATransportStaffFooter();?>
+  <?php echo TESTransportStaffFooter();?>
   </body>
   
 </html>
@@ -239,7 +239,7 @@ if($state=="add_blacklist"){
 if(isset($_POST['pass'])){
   $pass=$_POST['pass'];
   $pass_message=addslashes(nl2br($_POST['pass_message']));
-  if($pass==1){$message="通過";$subject="【QAT測試海運網】會員註冊成功";}elseif($pass==2){$message="沒有通過";$subject="【QAT測試海運網】會員註冊審核沒有通過";}
+  if($pass==1){$message="通過";$subject="【TEST測試海運網】會員註冊成功";}elseif($pass==2){$message="沒有通過";$subject="【TEST測試海運網】會員註冊審核沒有通過";}
   list($account,$auth)=getAccountAuth();
   $emailname="測試海運網";
   $recipients=array(array("email"=>$data_array['username'],"name"=>$data_array['contact_name']));

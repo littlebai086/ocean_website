@@ -11,14 +11,14 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{$id=false;}
 if (isset($_GET['state'])){$state=$_GET['state'];}else{$state=false;}
 list($result,$message)=getStaffStatePriorityReturn($state,5,$id,false);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
 list($result,$message)=getStaffPagePriorityReturn(5);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
 $items=array("quote_route","ocean_export_additional_link");
@@ -48,12 +48,12 @@ if($state=="add"){
 <html>
 <head>
   <?php 
-    echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true);
+    echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
   ?>
 </head>
 <body>
 <?php 
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
 	echo PopupWidowScriptHiddenButton(false,"OceanExportQuoteUploadMessage");
@@ -77,15 +77,15 @@ if($state=="add"){
      </div>
   </form>
 </main>
-<?php echo QATransportStaffFooter();?>
+<?php echo TESTransportStaffFooter();?>
 </body>
 </html>
 <?php
 if(isset($_POST['emp_edit_send'])){
   if($state=="add"){
-    $title="洋宏航運報價新增";
+    $title="測試航運報價新增";
   }elseif($state=="update"){
-    $title="洋宏航運報價修改";
+    $title="測試航運報價修改";
   }
   $quote_route=strtoupper($data_array['quote_route']);
 

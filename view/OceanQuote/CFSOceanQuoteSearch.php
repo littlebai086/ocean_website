@@ -11,7 +11,7 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-	<?php echo QATransportCommonHtmlHead("洋宏海運網");?>
+	<?php echo TESTransportCommonHtmlHead("測試海運網");?>
   <script src='../../js/QuotePrice.js'></script>
   <script language="javascript">
 
@@ -28,8 +28,8 @@ session_start();
 <body>
 
 	<?php
-    echo QATransportCommonHtmlBody();
-  	list($result,$html)=QATransportHeader(true,false);
+    echo TESTransportCommonHtmlBody();
+  	list($result,$html)=TESTransportHeader(true,false);
   	echo $html;
   	if(!$result){exit;}
   	$ocean_quote_buf=sqlSelectOceanExportOrderByQuoteRoute();
@@ -87,7 +87,7 @@ session_start();
     </div>
   </div>
 <div class="footer">
-	<?php echo QATransportFooter();?>
+	<?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>

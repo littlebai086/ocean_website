@@ -13,10 +13,10 @@ $items=array("member_id","username","tax_id_number","company_chinese","company_e
 
 if(isset($_POST['emp_edit_send'])){
   if($state=="add"){
-    $title="洋宏海運網會員註冊";
+    $title="測試海運網會員註冊";
     $submit="註冊";
   }elseif($state=="update"){
-    $title="洋宏海運網會員修改";
+    $title="測試海運網會員修改";
     $submit="修改";
   }
   $error=true;
@@ -32,7 +32,7 @@ if(isset($_POST['emp_edit_send'])){
   }
 
 }elseif($state=="add"){
-  $title="洋宏海運網會員註冊";
+  $title="測試海運網會員註冊";
   $submit="註冊";
   $error=false;
   foreach ($items as $item){
@@ -44,7 +44,7 @@ if(isset($_POST['emp_edit_send'])){
   }
   $form=getMemberInformationForm($state,"customer",$data_array);
 }elseif($state=="update"){
-  $title="洋宏海運網會員修改";
+  $title="測試海運網會員修改";
   $submit="修改";
   $error=false;
   $row=getMemberUsername($_SESSION['username']);
@@ -63,7 +63,7 @@ if(isset($_POST['emp_edit_send'])){
 <!doctype html>
 <html lang="en">
   <head>
-    <?php echo QATransportCommonHtmlHead("洋宏海運網登入");?>
+    <?php echo TESTransportCommonHtmlHead("測試海運網登入");?>
     <script src="../../js/MemberRegisterInformation.js"></script>
     <script language="javascript">
 
@@ -82,13 +82,13 @@ if(isset($_POST['emp_edit_send'])){
   </head>
   <body class="text-center">
 <?php
-echo QATransportCommonHtmlBody();
-list($result,$html)=QATransportHeader(true,true);
+echo TESTransportCommonHtmlBody();
+list($result,$html)=TESTransportHeader(true,true);
 echo $html;
 if(!$result){exit;}
 echo PopupWidowScriptHiddenButton(false,"RegisterSuccessMessage");
 echo PopupWidowScriptHiddenButton("verification_code","RegisterErrorMessage");
-echo PopupWidowHref("洋宏海運網","請檢查帳號的信箱是否收到驗證信。",false,false,"verification_code");
+echo PopupWidowHref("測試海運網","請檢查帳號的信箱是否收到驗證信。",false,false,"verification_code");
 ?>
 <!-- Modal -->
   <form method="post" action="MemberRegister.php?state=<?php echo $state;?>" id="loginForm"  class="form-inline" >
@@ -97,7 +97,7 @@ echo PopupWidowHref("洋宏海運網","請檢查帳號的信箱是否收到驗�
     <input type="text" id="member_id" name="member_id" value="<?php echo $data_array['member_id'];?>" hidden>
    <div class="row justify-content-md-center">
       <div class="col-md-12">
-        <!--<img class="mb-4" src="../../assets/brand/qat_log.jpg" alt="" width="200" height="100">-->
+        <!--<img class="mb-4" src="../../assets/brand/TEST_log.jpg" alt="" width="200" height="100">-->
         <h1 class="h3 mb-3 fw-normal"><?php echo $title;?></h1>
       </div>
     </div>
@@ -112,20 +112,20 @@ echo PopupWidowHref("洋宏海運網","請檢查帳號的信箱是否收到驗�
     <!--<p class="mt-5 mb-3 text-muted">&copy; 2017–2021 </p>-->
   </form>
   <div class="footer">
-    <?php echo QATransportMemberRegisterFooter();?>
+    <?php echo TESTransportMemberRegisterFooter();?>
   </div>
   </body>
 </html>
 <?php
 if(isset($_POST['emp_edit_send'])){
   if($state=="add"){
-    $title="洋宏會員註冊";
+    $title="測試會員註冊";
     $data_array['password']=$_POST['password'];
     $data_array['confirm_password']=$_POST['confirm_password'];
     $data_array['username_verification_code']=$_POST['username_verification_code'];
     $member_log=getMemberLogRegisterUsername($data_array['username']);
   }elseif($state=="update"){
-    $title="洋宏會員修改";
+    $title="測試會員修改";
     $member_log=false;
   }
   $data_array['company_english']=strtoupper($data_array['company_english']);
@@ -138,8 +138,8 @@ if(isset($_POST['emp_edit_send'])){
     $data_array['password'] = password_hash($data_array['password'], PASSWORD_DEFAULT);
     if (sqlInsertMember($data_array) && sqlUpdateMemberLogPass($member_log['member_log_id'],1)){
       list($account,$auth)=getAccountAuth();
-      $emailname="洋宏海運網";
-      $subject="【QAT洋宏海運網】新會員註冊通知";
+      $emailname="測試海運網";
+      $subject="【TEST測試海運網】新會員註冊通知";
       $recipients=getAllSendMailDataDecide("staff","jack;alex",false);
       $msg=getSendMailMemberPassMsg(0,false);
       if(sendMailLetter($account,$auth,$account,$emailname,$subject,$msg,false,false,$recipients,false)){

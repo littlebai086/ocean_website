@@ -42,8 +42,8 @@ switch ($action) {
    break;  
    case 'username_verification_code':
     list($account,$auth)=getAccountAuth();
-    $emailname="[系統自動寄送]洋宏海運網";
-    $subject="【QAT洋宏海運網】電子信箱審核通知";
+    $emailname="[系統自動寄送]測試海運網";
+    $subject="【TEST測試海運網】電子信箱審核通知";
     $verification_code=GetrandVerificationCode(4);
     $recipients=array(array("email"=>$val,"name"=>$val));
     $cc=false;

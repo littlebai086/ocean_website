@@ -8,7 +8,7 @@ $version	= " Ver 1.3.2a";
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <html>
 <head>
-	<title>洋宏股份有限公司貨櫃管理系統 <?php echo $version;?></title>
+	<title>測試股份有限公司貨櫃管理系統 <?php echo $version;?></title>
 	<style type="text/css">
 	#switch
 	{
@@ -35,7 +35,7 @@ $version	= " Ver 1.3.2a";
 <body BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
 <div id=switch>
 <table width=100% cellpadding=5 cellspacing=5 border=0>
-	<tr><td colspan=2 align=center><span style=font-size:40px;>洋宏股份有限公司貨櫃管理系統<br /><br /></span></td></tr>
+	<tr><td colspan=2 align=center><span style=font-size:40px;>測試股份有限公司貨櫃管理系統<br /><br /></span></td></tr>
 	<tr align=center>
 		<td><button onclick="location.href='../view/IsoTankIndex.php'" style=font-size:20px;>ISOTANK管理</button><br /><br /></td>
 		<td width=50%><button onclick="location.href='../view/DryIndex.php'" style=font-size:20px;>乾櫃管理</button><br /><?php echo $version;?><br /></td>

@@ -6,18 +6,18 @@ require_once("../../controllers/CommonController.php");
 require_once("../../controllers/CommonHtmlController.php");
 require_once("../../controllers/CommonSqlController.php");
 $table="";
-$title="洋宏海運網";
+$title="測試海運網";
 if (isset($_GET['state'])){$state=$_GET['state'];}else{$state=false;}
 list($result,$message)=getStaffStatePriorityReturn($state,3,false,false);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
 list($result,$message)=getStaffPagePriorityReturn(3);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
 $data_array=getMarqueeMarqueeFirst();
@@ -26,7 +26,7 @@ $data_array=getMarqueeMarqueeFirst();
 <html lang="en">
   <head>
 <?php 
-  echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true);
+  echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
 ?>
 <script language="javascript">
 $(document).ready(function(){
@@ -50,7 +50,7 @@ function SelectMarqueeContentChangTextareaMessage(){
   <body>
 
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(true,"StaticWidowMessage");
@@ -90,7 +90,7 @@ function SelectMarqueeContentChangTextareaMessage(){
   <input type='submit' class='btn btn-success' value='修改'>
   </p>
 </form>
-  <?php echo QATransportStaffFooter();?>
+  <?php echo TESTransportStaffFooter();?>
 </body>
 </html>
 <?php

@@ -8,11 +8,11 @@ require_once("../../controllers/CommonSqlController.php");
 require_once("../../controllers/CountryController.php");
 list($result,$message)=getStaffPagePriorityReturn(4);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
-$title="洋宏海運網";
+$title="測試海運網";
 $search_fields=array();
 $fields=array("ocean_export_id","country_english","country_chinese");
 foreach ($fields as $field){
@@ -27,20 +27,20 @@ foreach ($fields as $field){
 <html lang="en">
   <head>
 <?php 
-  echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true);
+  echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
 ?>
    </head>
   <body class="text-center">
 <script type="text/javascript" language="javascript">
 </script>
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(false,false,"country_del");
   echo PopupWidowScriptHiddenButton(false,false,"country_reply");
-  echo PopupCloseWidowHref("洋宏後台海運網","確認是否將此國家刪除?","確認","取消","",false,"country_del");
-  echo PopupCloseWidowHref("洋宏後台海運網","確認是否將此國家還原至未刪除?","確認","取消","",false,"country_reply");
+  echo PopupCloseWidowHref("測試後台海運網","確認是否將此國家刪除?","確認","取消","",false,"country_del");
+  echo PopupCloseWidowHref("測試後台海運網","確認是否將此國家還原至未刪除?","確認","取消","",false,"country_reply");
   $staff_array=getStaffListStaffId($_SESSION['staff_id']);
   $table=getCountrySearchTable($search_fields);
 ?>
@@ -91,6 +91,6 @@ foreach ($fields as $field){
   echo $table;
   ?>
 </table>
-  <?php echo QATransportStaffFooter();?>
+  <?php echo TESTransportStaffFooter();?>
 </body>
 </html>

@@ -24,12 +24,12 @@ if($state=="upload_excel"){
 <html>
 <head>
   <?php 
-    echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true);
+    echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
   ?>
 </head>
 <body>
 <?php 
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
 	echo PopupWidowScriptHiddenButton(false,"OceanExportQuoteUploadMessage");
@@ -53,7 +53,7 @@ if($state=="upload_excel"){
      </div>
   </form>
 </main>
-<?php echo QATransportStaffFooter();?>
+<?php echo TESTransportStaffFooter();?>
 </body>
 </html>
 <?php

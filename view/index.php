@@ -8,8 +8,8 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<title>洋宏海運網</title>
-	<?php echo QATransportCommonHtmlHead("【洋宏海運網】線上訂艙詢價|國際海運出口貨運承攬|近20年國際海運承攬經驗",false,true);?>
+<title>測試海運網</title>
+	<?php echo TESTransportCommonHtmlHead("【測試海運網】線上訂艙詢價|國際海運出口貨運承攬|近20年國際海運承攬經驗",false,true);?>
 	<script>
 	$(document).ready(function() {
 		
@@ -31,16 +31,16 @@ session_start();
 </head>
 <body>
 	<?php 
-	echo QATransportCommonHtmlBody();
-	list($result,$html)=QATransportHeader(false,true);
+	echo TESTransportCommonHtmlBody();
+	list($result,$html)=TESTransportHeader(false,true);
   	echo $html;
   	if(!$result){exit;}
 	?>
 <div>
-	<?php echo QATransportIndex();?>
+	<?php echo TESTransportIndex();?>
 </div>
 <div class="footer">
-	<?php echo QATransportFooter();?>
+	<?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>

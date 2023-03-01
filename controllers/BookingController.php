@@ -165,7 +165,7 @@ function getBookingOrderCommonListPopupButtonWidowHref(){
     $result.= PopupWidowScriptHiddenButton(true);
     foreach($arrays as $array){
         $result.= PopupWidowScriptHiddenButton(false,false,$array["popup_id"]);
-        $result.= PopupCloseWidowHref("洋宏後台海運網",$array["text"],"確認","取消","",false,$array["popup_id"]);
+        $result.= PopupCloseWidowHref("測試後台海運網",$array["text"],"確認","取消","",false,$array["popup_id"]);
     }
     return $result;
 }
@@ -187,7 +187,7 @@ function getSendBookingOrderSubjectMsgAttachCC($id,$state){
     $cc=array();
     $cc_departments=false;
     $data_array=getBookingOrderId($id);
-    $subject="【QAT洋宏海運網】訂艙編號：".getSerialCombinationStr($data_array);
+    $subject="【TEST測試海運網】訂艙編號：".getSerialCombinationStr($data_array);
     $attach_array=getBookingOrderSendMailAttachArray($state,$data_array);
     $msg=getSendMailOrderStatusMsg($data_array,$state);
     if($state=="cut_off_date"){
@@ -196,7 +196,7 @@ function getSendBookingOrderSubjectMsgAttachCC($id,$state){
         $subject.="狀態：更改開航日通知";
     }
     if($data_array['schedule']==1){
-        $subject="【QAT洋宏海運網】客戶訂艙通知，訂艙編號：".getSerialCombinationStr($data_array);
+        $subject="【TEST測試海運網】客戶訂艙通知，訂艙編號：".getSerialCombinationStr($data_array);
     }elseif($data_array['schedule']==2){
         $staff_array=getStaffListId($data_array["cs_staff_id"]);
         if($state=="provide_so_pending"){
@@ -233,7 +233,7 @@ function getSendBookingOrderSubjectMsgAttachCC($id,$state){
         
     }
     if($data_array['schedule']!=1){
-        $cc=getSendMailRecipientsArray(getQATCompanySendShowName($staff_array),$staff_array['email']);
+        $cc=getSendMailRecipientsArray(getTESTCompanySendShowName($staff_array),$staff_array['email']);
     }
     
     if($cc_departments!==false){

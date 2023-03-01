@@ -31,14 +31,14 @@ if($state=="update"){
 <!doctype html>
 <html lang="en">
   <head>
-    <?php echo QATransportCommonHtmlHead("洋宏海運網訂艙單");?>
+    <?php echo TESTransportCommonHtmlHead("測試海運網訂艙單");?>
   </head>
   <body class="text-center">
 <?php
-  echo QATransportCommonHtmlBody();
+  echo TESTransportCommonHtmlBody();
   echo PopupWidowScriptHiddenButton(false,false,1);
-  echo PopupCloseWidowHref("洋宏海運網","是否要將此訂單取消?","確認","取消","",false,1);
-  list($result,$html)=QATransportHeader(true,false);
+  echo PopupCloseWidowHref("測試海運網","是否要將此訂單取消?","確認","取消","",false,1);
+  list($result,$html)=TESTransportHeader(true,false);
   echo $html;
   if(!$result){exit;}
   $member_array=getMemberUsername($_SESSION['username']);
@@ -172,7 +172,7 @@ if($state=="update"){
 
 
 <div class="footer">
-  <?php echo QATransportFooter();?>
+  <?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>

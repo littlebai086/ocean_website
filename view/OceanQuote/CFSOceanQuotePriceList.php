@@ -13,8 +13,8 @@ if(isset($_GET['ocean_export_id'])){$ocean_export_id=$_GET['ocean_export_id'];}e
 $data_array=getOceanExportInnerOceanExportDateDeadlineOceanExportId($ocean_export_id,"CFS");
 // list($result,$message)=getStaffPagePriorityReturn(5);
 // if(!$result){
-//   echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-//   echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+//   echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+//   echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
 //   exit;
 // }
 $table=getStaffCFSOceanPricePriceListTable($ocean_export_id);
@@ -24,12 +24,12 @@ $table=getStaffCFSOceanPricePriceListTable($ocean_export_id);
 <html lang="en">
   <head>
     <?php 
-      echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true);
+      echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
     ?>
    </head>
   <body>
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(false);
@@ -47,6 +47,6 @@ $table=getStaffCFSOceanPricePriceListTable($ocean_export_id);
   //echo getOceanExportPriceLocalChargeTable(92);
   ?>
 </table>
-<?php echo QATransportStaffFooter();?>
+<?php echo TESTransportStaffFooter();?>
 </body>
 </html>

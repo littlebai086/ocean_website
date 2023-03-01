@@ -15,7 +15,7 @@ require_once("../../controllers/MemberController.php");
 <!doctype html>
 <html lang="en">
   <head>
-    <?php echo QATransportCommonHtmlHead("測試海運網聯絡我們");?>
+    <?php echo TESTransportCommonHtmlHead("測試海運網聯絡我們");?>
     <style>
       #intro {
         background-image: url(../../images/login_bg.jpg);
@@ -27,9 +27,9 @@ require_once("../../controllers/MemberController.php");
    </head>
   <body class="text-center">
 <?php
-echo QATransportCommonHtmlBody();
+echo TESTransportCommonHtmlBody();
 echo PopupWidowScriptHiddenButton(1);
-  list($result,$html)=QATransportHeader(true,true);
+  list($result,$html)=TESTransportHeader(true,true);
   echo $html;
   if(!$result){exit;}
 ?>
@@ -75,7 +75,7 @@ echo PopupWidowScriptHiddenButton(1);
     </div>
   </div>
 <div class="footer">
-  <?php echo QATransportFooter();?>
+  <?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>

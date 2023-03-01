@@ -42,6 +42,6 @@ function getURLLink(){
     }else{
         $http="http";
     }
-    return $http."://".$_SERVER['HTTP_HOST']."/qat_logistics/";}
-    //return $http."://".$_SERVER['HTTP_HOST']."/test_qat/";}
+    return $http."://".$_SERVER['HTTP_HOST']."/TEST_logistics/";}
+    //return $http."://".$_SERVER['HTTP_HOST']."/test_TEST/";}
 ?>

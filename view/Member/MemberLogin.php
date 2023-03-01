@@ -11,7 +11,7 @@ require_once("../../controllers/MemberController.php");
 <!doctype html>
 <html lang="en">
   <head>
-    <?php echo QATransportCommonHtmlHead("洋宏海運網登入");?>
+    <?php echo TESTransportCommonHtmlHead("測試海運網登入");?>
     <link href="../../css/signin.css" rel="stylesheet">
     <style>
       #intro {
@@ -25,9 +25,9 @@ require_once("../../controllers/MemberController.php");
   <body class="text-center">
 
 <?php
-  echo QATransportCommonHtmlBody();
+  echo TESTransportCommonHtmlBody();
   echo PopupWidowScriptHiddenButton(2,1);
-  list($result,$html)=QATransportHeader(true,true);
+  list($result,$html)=TESTransportHeader(true,true);
   echo $html;
   if(!$result){exit;}
 ?> 
@@ -62,7 +62,7 @@ require_once("../../controllers/MemberController.php");
       </div>
     </div>
 <div class="footer">
-  <?php echo QATransportFooter();?>
+  <?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>
@@ -70,7 +70,7 @@ require_once("../../controllers/MemberController.php");
 <?php
 
 if(isset($_POST['emp_login'])){
-  $title="洋宏會員登入";
+  $title="測試會員登入";
   $username=$_POST['username'];
   $password=$_POST['password'];
   $row=getMemberUsername($username);
@@ -80,7 +80,7 @@ if(isset($_POST['emp_login'])){
       $_SESSION['username']=$username;
       $_SESSION['identity']='customer';
       $_SESSION['pass']=$row['pass'];
-      $message=$row['contact_name'].getGenderChinese($row['gender'])."您好，歡迎登入洋宏海運網";
+      $message=$row['contact_name'].getGenderChinese($row['gender'])."您好，歡迎登入測試海運網";
       if($row['pass']==0){
         $message.="，目前會員資訊正在審核中";
       }elseif($row['pass']==1){
@@ -88,7 +88,7 @@ if(isset($_POST['emp_login'])){
           "新增登入紀錄成功";
         }
       }elseif($row['pass']==2){
-        $message="會員註冊失敗，煩請貴司聯繫我司相關人員協助 (02)6602-8989。";
+        $message="會員註冊失敗，煩請貴司聯繫我司相關人員協助 (02)1234-5678。";
       }
       if($row['pass_message']){
         $message.="<br>".$row['pass_message'];

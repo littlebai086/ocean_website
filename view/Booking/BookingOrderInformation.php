@@ -14,14 +14,14 @@ if (isset($_GET['state'])){$state=$_GET['state'];}else{$state="add";}
 <!doctype html>
 <html lang="en">
   <head>
-    <?php echo QATransportCommonHtmlHead("洋宏海運網訂艙單");?>
+    <?php echo TESTransportCommonHtmlHead("測試海運網訂艙單");?>
     <link href="../../css/signin.css" rel="stylesheet">
    </head>
   <body class="text-center">
 <?php
-  echo QATransportCommonHtmlBody();
+  echo TESTransportCommonHtmlBody();
   echo PopupWidowScriptHiddenButton(false);
-  list($result,$html)=QATransportHeader(true,false);
+  list($result,$html)=TESTransportHeader(true,false);
   echo $html;
   if(!$result){exit;}
   $member_array=getMemberUsername($_SESSION['username']);
@@ -55,7 +55,7 @@ if (isset($_GET['state'])){$state=$_GET['state'];}else{$state="add";}
 ?> 
  <input type="button" value="回訂艙列表" onclick="location.href='./MemberBookingOrderList.php'" class="btn btn-secondary">
 <div class="footer">
-  <?php echo QATransportFooter();?>
+  <?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>

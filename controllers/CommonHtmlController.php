@@ -7,7 +7,7 @@
  * @return string
  */
 function getErrorUrlPage(){
-    $result="<script language='javascript'>document.location.href='https://test.com.tw/qat_logistics/error';</script>";
+    $result="<script language='javascript'>document.location.href='https://test.com.tw/TEST_logistics/error';</script>";
     return $result;
 }
 /**
@@ -34,11 +34,7 @@ function getBoostrapBlundleJsImportEnd(){
 function getGoogleTagManagerJsImportHeader(){
     $result="
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K4ZQ8SC');</script>
+
 <!-- End Google Tag Manager -->
 ";
     return $result;
@@ -53,8 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 function getGoogleTagManagerJsImportBody(){
     $result="
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src='https://www.googletagmanager.com/ns.html?id=GTM-K4ZQ8SC'
-height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript>
+
 <!-- End Google Tag Manager (noscript) -->
 ";
     return $result;
@@ -70,7 +65,7 @@ height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript>
  *
  * @return string
  */
-function QATransportStaffCommonHtmlHead($title,$parent_link=true,$navbar_top_fixed=true){
+function TESTransportStaffCommonHtmlHead($title,$parent_link=true,$navbar_top_fixed=true){
     $navbar_result="";
     if ($parent_link){
         $parent_href="../../";
@@ -112,7 +107,7 @@ function QATransportStaffCommonHtmlHead($title,$parent_link=true,$navbar_top_fix
  *
  * @return string
  */
-function QATransportCommonHtmlHead($title,$parent_link=true,$google_seo_search=false){
+function TESTransportCommonHtmlHead($title,$parent_link=true,$google_seo_search=false){
     $meta_html="";
     if ($parent_link){
         $parent_href="../../";
@@ -157,7 +152,7 @@ function QATransportCommonHtmlHead($title,$parent_link=true,$google_seo_search=f
  *
  * @return string
  */
-function QATransportCommonHtmlBody(){
+function TESTransportCommonHtmlBody(){
     $result=getGoogleTagManagerJsImportBody();
     return $result;
 }
@@ -176,7 +171,7 @@ function QATransportCommonHtmlBody(){
  * @return array(boolean,string)
  */
 
-function QATransportHeader($parent_link,$non_member_use){
+function TESTransportHeader($parent_link,$non_member_use){
     $msg="";
     $ip=getRealIp();
     if(getIpBlackListIp($ip)){
@@ -240,7 +235,7 @@ function QATransportHeader($parent_link,$non_member_use){
         <div id='logo'><a href='".$parent_href."view/index.php'><img src='".$parent_href."images/little_bai86.png'  height='60' width='100' /></a></div>
         <div id='menu'>
             <ul class='drop-down-menu'>";
-                $msg.="<li><a href='https://www.qatransport.com/' target='_blank'>測試公司官網</a></li>";
+                $msg.="<li><a href='https://www.TESTransport.com/' target='_blank'>測試公司官網</a></li>";
             if (isset($_SESSION['username'])){
                 $msg.="<li><a href='#'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-file-person-fill' viewBox='0 0 16 16'>
   <path d='M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11z'/>
@@ -333,7 +328,7 @@ return array(true,$msg);
  * @return string
  */
 // <img src='../banner/banner.jpg' class='img' width=100%/>
-function QATransportIndex(){
+function TESTransportIndex(){
     $marquee_array=getMarqueeMarqueeFirst();
     $msg="<!-- banner開始 //-->
   <div class='bn'>      
@@ -408,7 +403,7 @@ return $msg;
  *
  * @return string
  */
-function QATransportFooter(){
+function TESTransportFooter(){
     $msg="<!-- Footer -->
 <!-- Footer -->
 <footer class='footer-color'>
@@ -426,11 +421,11 @@ return $msg;
  *
  * @return string
  */
-function QATransportMemberRegisterFooter(){
+function TESTransportMemberRegisterFooter(){
     $msg="<!-- Footer -->
 <!-- Footer -->
 <footer class='footer-color'>
-    <p class='text-start'>如有任何疑問 TEL : 886-2-1234-5678 EXT : 116, Alex Wan ( E-Mail : cs@qatransport.com )</p>
+    <p class='text-start'>如有任何疑問 TEL : 886-2-1234-5678 EXT : 116, Alex Wan ( E-Mail : cs@test.com )</p>
     <p class='text-start'>地址：台北市松山區XXX路X段X號X樓 Copyright &copy; 2017, All Rights Reserved by QA Transport Co., LTD.</p>
     
     <span align=right><p>建議使用瀏覽器：IE 9以後版本或Chrome 60.0以上</p></span>
@@ -449,7 +444,7 @@ return $msg;
  *
  * @return array(boolean,string)
  */
-function QATransportStaffHeader($parent_link){
+function TESTransportStaffHeader($parent_link){
     $msg="";
     $ip=getRealIp();
     if(getIpBlackListIp($ip)){
@@ -503,7 +498,7 @@ return array(true,$msg);
  *
  * @return string
  */
-function QATransportStaffFooter(){
+function TESTransportStaffFooter(){
     $msg="
 <nav class='navbar text-light navbar-dark bg-dark'>
 <div class='container-fluid'>
@@ -524,8 +519,8 @@ return $msg;
  *
  * @return string
  */
-function QATransportStaffPageHeadDecideErrorImportHtml($head,$parent_link){
-    $msg=QATransportStaffCommonHtmlHead($head,$parent_link);
+function TESTransportStaffPageHeadDecideErrorImportHtml($head,$parent_link){
+    $msg=TESTransportStaffCommonHtmlHead($head,$parent_link);
     $msg.=PopupWidowScriptHiddenButton(false,"StaffPriorityMessage");
     $msg.=getBoostrapBlundleJsImportEnd();
 return $msg;
@@ -1610,7 +1605,7 @@ function getStaffAuditMemberSelectTextarea($pass){
     if($pass==1){
         $text="";
         $textarea="
-        <textarea class='form-control' id='TextareaPassMessage' rows='3' readonly='readonly' name='pass_message' required='required'>恭喜您已經成為 QAT 測試海運網的會員。</textarea>";
+        <textarea class='form-control' id='TextareaPassMessage' rows='3' readonly='readonly' name='pass_message' required='required'>恭喜您已經成為 TEST 測試海運網的會員。</textarea>";
     }elseif($pass==2){
         $text="
     <div class='input-group mb-3'>

@@ -11,14 +11,14 @@ if(isset($_GET['state'])){$state=$_GET['state'];}else{$state=false;}
 if(isset($_GET['id'])){$staff_id=$_GET['id'];}else{$staff_id=false;}
 list($result,$message)=getStaffStatePriorityReturn($state,1,$staff_id,false);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
 list($result,$message)=getStaffPagePriorityReturn(1);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
 $items=array("cname","gender","elastname","ename","email","email_address","birthday","extension","department_ids","position_id","staff_state_id");
@@ -60,7 +60,7 @@ $data_array['elastname']=ucfirst(strtolower($data_array['elastname']));
 <html>
 <head>
 <?php 
-  echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true);
+  echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
 
 ?>
 </head>
@@ -70,7 +70,7 @@ $data_array['elastname']=ucfirst(strtolower($data_array['elastname']));
 </style>
 <body>
 <?php 
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
 
@@ -227,7 +227,7 @@ $data_array['elastname']=ucfirst(strtolower($data_array['elastname']));
      </div>
   </form>
 </main>
-        <?php echo QATransportStaffFooter();?>
+        <?php echo TESTransportStaffFooter();?>
         <script src="../../js/BsMultiSelect.js"></script>
         <script>
             var $management = $('#department_id');

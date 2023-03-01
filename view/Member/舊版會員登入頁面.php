@@ -18,7 +18,7 @@ require_once("../../view/CommonPage.php");
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>洋宏海運網登入</title>
+    <title>測試海運網登入</title>
     <link href="../../css/menu.css" rel="stylesheet" type="text/css">
     <link href="../../css/style.css" rel="stylesheet" type="text/css">
     <link href="../../css/reset.css" rel="stylesheet" type="text/css">
@@ -57,13 +57,13 @@ function PopupWidowClick(){
 </script>
 <?php
 echo PopupWidowScriptHiddenButton(2,1);
-echo QATransportHeader(true);
+echo TESTransportHeader(true);
 ?> 
 
 <main class="form-signin">    
       <form method="post" action="" id="loginForm">
-    <img class="mb-4" src="../../assets/brand/qat_log.jpg" alt="" width="200" height="100">
-    <h1 class="h3 mb-3 fw-normal">洋宏海運網登入</h1>
+    <img class="mb-4" src="../../assets/brand/TEST_log.jpg" alt="" width="200" height="100">
+    <h1 class="h3 mb-3 fw-normal">測試海運網登入</h1>
 
     <div class="form-floating">
       <input type="text" class="form-control" id="user" name="username" placeholder="user" 
@@ -85,14 +85,14 @@ echo QATransportHeader(true);
   </form>
 </main>
 <div class="footer">
-  <?php echo QATransportFooter();?>
+  <?php echo TESTransportFooter();?>
 </div>
 </body>
 </html>
 
 <?php
 if(isset($_POST['emp_login'])){
-  $title="洋宏會員登入";
+  $title="測試會員登入";
   $username=$_POST['username'];
   $password=$_POST['password'];
   $row=getMemberUsername($username);
@@ -100,7 +100,7 @@ if(isset($_POST['emp_login'])){
     if (password_verify($password, $row['password'])) {
       $_SESSION['username']=$username;
       $_SESSION['pass']=$row['pass'];
-      $message=$row['company_chinese']."的".$row['contact_name'].getGenderChinese($row['gender'])."您好，歡迎登入洋宏海運網";
+      $message=$row['company_chinese']."的".$row['contact_name'].getGenderChinese($row['gender'])."您好，歡迎登入測試海運網";
       if($row['pass']==0){
         $message.="，目前會員資訊正在審核中";
       }

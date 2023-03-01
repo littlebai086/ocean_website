@@ -28,7 +28,7 @@ if (isset($_GET['id'])){
 if (isset($_GET['state'])){$state=$_GET['state'];}else{$state=false;}
 list($result,$message)=getStaffStatePriorityReturn($state,6,$id,false);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
   echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
@@ -52,7 +52,7 @@ if($state=="information"){
 <html lang="en">
   <head>
 <?php 
-  echo QATransportStaffCommonHtmlHead("測試海運網後台",true);
+  echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
 ?>
    </head>
   <script language="javascript">
@@ -96,7 +96,7 @@ function InputFileFileListShowStaffProvideFile(){
   <body>
 
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(true,"StaticWidowMessage");
@@ -120,7 +120,7 @@ function InputFileFileListShowStaffProvideFile(){
   }
 ?> 
 </form>
-  <?php echo QATransportStaffFooter();?>
+  <?php echo TESTransportStaffFooter();?>
 </body>
 </html>
 <?php

@@ -9,8 +9,8 @@ require_once("../../controllers/OceanExportController.php");
 if(isset($_GET['pass'])){$pass=$_GET['pass'];}elseif(isset($_POST['pass'])){$pass=$_POST['pass'];}else{$pass=1;}
 list($result,$message)=getStaffPagePriorityReturn(5);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("洋宏海運網後台",true);
-  echo PopupStaticWidowHref("洋宏海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
 $page_total=count(sqlSelectOceanExportList());
@@ -23,12 +23,12 @@ $table=getStaffMemberOceanExportListSearchTable();
 <html lang="en">
   <head>
     <?php 
-      echo QATransportStaffCommonHtmlHead("洋宏海運網後台",true);
+      echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
     ?>
    </head>
   <body>
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(false);
@@ -52,6 +52,6 @@ $table=getStaffMemberOceanExportListSearchTable();
 <?php 
   echo $page_text;
 ?>
-<?php echo QATransportStaffFooter();?>
+<?php echo TESTransportStaffFooter();?>
 </body>
 </html>

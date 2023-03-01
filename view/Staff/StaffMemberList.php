@@ -9,7 +9,7 @@ require_once("../../controllers/MemberController.php");
 if(isset($_GET['pass'])){$pass=$_GET['pass'];}elseif(isset($_POST['pass'])){$pass=$_POST['pass'];}else{$pass=1;}
 list($result,$message)=getStaffPagePriorityReturn(2);
 if(!$result){
-  echo QATransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
+  echo TESTransportStaffPageHeadDecideErrorImportHtml("測試海運網後台",true);
   echo PopupStaticWidowHref("測試海運網",$message,"../StaffIndex.php",true,"StaffPriorityMessage");
   exit;
 }
@@ -33,12 +33,12 @@ $table=getStaffMemberListSearchTable($pass,$search_fields,$start,$per);
 <html lang="en">
   <head>
     <?php 
-      echo QATransportStaffCommonHtmlHead("測試海運網後台",true);
+      echo TESTransportStaffCommonHtmlHead("測試海運網後台",true);
     ?>
    </head>
   <body>
 <?php
-  list($result,$html)=QATransportStaffHeader(true);
+  list($result,$html)=TESTransportStaffHeader(true);
   echo $html;
   if(!$result){exit;}
   echo PopupWidowScriptHiddenButton(false,false,"add_blacklist");
@@ -120,6 +120,6 @@ $table=getStaffMemberListSearchTable($pass,$search_fields,$start,$per);
   echo $page_text;
 ?>
 
-  <?php echo QATransportStaffFooter();?>
+  <?php echo TESTransportStaffFooter();?>
 </body>
 </html>
